@@ -14,6 +14,10 @@ config/name="Day by Day"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="Day by Day"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
