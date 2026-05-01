@@ -1,3 +1,25 @@
 [gd_scene format=3 uid="uid://d3f2w2u0b78kp"]
 
+[ext_resource type="Script" uid="uid://cfdvyeamkvpa8" path="res://Scenes/player.gd" id="1_8nnpo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_chhb2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnpo"]
+size = Vector2(533.2729, 8.191068)
+
 [node name="principal" type="Node2D" unique_id=885252157]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=807708654]
+position = Vector2(538, 329)
+script = ExtResource("1_8nnpo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1478747012]
+shape = SubResource("CapsuleShape2D_chhb2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1454770233]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=847243185]
+position = Vector2(577.50006, 642.7501)
+rotation = -3.1415925
+scale = Vector2(2.16212, -28.750866)
+shape = SubResource("RectangleShape2D_8nnpo")
