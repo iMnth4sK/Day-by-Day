@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
-@export var jump_force: float = -375.0
+@export var speed: float = 150.0
+@export var jump_force: float = -350.0
 @export var gravity: float = 1200.0
 
 var z_axis: float = 0.0          # Altura visual
