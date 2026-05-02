@@ -1237,6 +1237,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkybt"]
+bg_color = Color(0.68, 0.65393335, 0.646, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3wgy"]
+bg_color = Color(0.24110007, 0.70925844, 0.288478, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=890080282]
 script = ExtResource("1_v0iea")
 
@@ -1249,3 +1255,14 @@ scale = Vector2(1.7926407, 1.6353514)
 sprite_frames = SubResource("SpriteFrames_3smsa")
 animation = &"run_a+s"
 autoplay = "idle"
+
+[node name="StaminaBar" type="ProgressBar" parent="." unique_id=262843847]
+visible = false
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = -24.0
+scale = Vector2(0.7291228, 0.8437278)
+theme_override_styles/background = SubResource("StyleBoxFlat_fkybt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x3wgy")
+show_percentage = false
