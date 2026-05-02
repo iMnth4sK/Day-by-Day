@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/player.tscn" id="1_8nnpo"]
 
 [node name="principal" type="Node2D" unique_id=885252157]
-position = Vector2(447, 383)
 scale = Vector2(0.8879742, 1.1595513)
 
 [node name="Player" parent="." unique_id=890080282 instance=ExtResource("1_8nnpo")]
+scale = Vector2(-1.7538306, 1.3404828)

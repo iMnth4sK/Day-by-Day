@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fj55uls5mikr"
-path="res://.godot/imported/personagem2d.res.png-88eff8ce2b29fec19f9381a9a5721a3f.ctex"
+uid="uid://ba0l7vi2bf51m"
+path="res://.godot/imported/16x32 Jump-Sheet.png-5e35f02d4252a8733387292c62c014c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/personagem2d.res.png"
-dest_files=["res://.godot/imported/personagem2d.res.png-88eff8ce2b29fec19f9381a9a5721a3f.ctex"]
+source_file="res://Art/16x32/16x32 Jump-Sheet.png"
+dest_files=["res://.godot/imported/16x32 Jump-Sheet.png-5e35f02d4252a8733387292c62c014c6.ctex"]
 
 [params]
 
