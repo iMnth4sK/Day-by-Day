@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cvnsp"]
 radius = 17.0
-height = 50.0
+height = 44.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_cvnsp")
@@ -1247,6 +1247,7 @@ bg_color = Color(0.24110007, 0.70925844, 0.288478, 1)
 script = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1265310925]
+visible = false
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=283750472]
@@ -1257,12 +1258,18 @@ animation = &"run_a+s"
 autoplay = "idle"
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=262843847]
-visible = false
-offset_left = -23.0
-offset_top = -32.0
-offset_right = 40.0
-offset_bottom = -24.0
+offset_left = -22.0
+offset_top = -38.0
+offset_right = 41.0
+offset_bottom = -30.0
 scale = Vector2(0.7291228, 0.8437278)
 theme_override_styles/background = SubResource("StyleBoxFlat_fkybt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x3wgy")
 show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1237530898]
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
