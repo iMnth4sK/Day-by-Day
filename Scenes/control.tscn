@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://y54sgc3wrobu"]
+
+[ext_resource type="Script" uid="uid://bvp0woapt06d8" path="res://Scripts/MainMenuButtons.gd" id="1_sjmnu"]
+
+[node name="Control" type="Control" unique_id=2018034980]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sjmnu")
+
+[node name="Sair" type="Button" parent="." unique_id=956579653]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -98.0
+offset_right = 175.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sair"
+
+[node name="Opções" type="Button" parent="." unique_id=2132673183]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -198.0
+offset_right = 175.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Opções"
+
+[node name="NovoJogo" type="Button" parent="." unique_id=1354825930]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = -298.0
+offset_right = 175.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Novo Jogo"
+
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Opções" to="." method="_on_opções_pressed"]
+[connection signal="pressed" from="NovoJogo" to="." method="_on_novo_jogo_pressed"]
