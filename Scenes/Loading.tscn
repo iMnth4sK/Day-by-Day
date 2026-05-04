@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://qclyn8ge7ok2"]
+
+[ext_resource type="Script" uid="uid://b533npwjv7upj" path="res://Scripts/loading.gd" id="1_sid5e"]
+
+[node name="Loading" type="Node2D" unique_id=1202426266]
+script = ExtResource("1_sid5e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1912093887]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=87497425]
+offset_right = 1155.0
+offset_bottom = 651.0
+color = Color(0.033853278, 0.033853278, 0.033853274, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=963766135]
+offset_left = 781.0
+offset_top = 531.0
+offset_right = 980.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 40
+text = "Loading..."
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1499995250]
+offset_left = 997.0
+offset_top = 588.0
+offset_right = 1149.0
+offset_bottom = 646.0
