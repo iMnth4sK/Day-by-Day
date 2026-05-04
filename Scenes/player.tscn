@@ -1258,11 +1258,11 @@ animation = &"run_a+s"
 autoplay = "idle"
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=262843847]
-offset_left = -22.0
-offset_top = -38.0
-offset_right = 41.0
-offset_bottom = -30.0
-scale = Vector2(0.7291228, 0.8437278)
+offset_left = -25.000002
+offset_top = -34.0
+offset_right = 38.0
+offset_bottom = -26.0
+scale = Vector2(0.8224771, 0.7640356)
 theme_override_styles/background = SubResource("StyleBoxFlat_fkybt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_x3wgy")
 show_percentage = false
