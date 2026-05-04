@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bt470dbuer5pv"]
 
+[ext_resource type="Script" uid="uid://ds1rwdgnoqn4l" path="res://Scripts/character_body_2d.gd" id="1_88kja"]
 [ext_resource type="Texture2D" uid="uid://cg5c4tufuimtu" path="res://Art/16x32/16x32 Idle-Sheet.png" id="1_f50pn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij6vw"]
@@ -45,6 +46,7 @@ radius = 32.0
 height = 68.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=930602612]
+script = ExtResource("1_88kja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=116949084]
 shape = SubResource("CapsuleShape2D_ij6vw")
@@ -58,3 +60,6 @@ frame_progress = 0.009054787
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1704292457]
 shape = SubResource("CapsuleShape2D_qp52p")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
