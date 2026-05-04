@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3f2w2u0b78kp"]
 
 [ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/player.tscn" id="1_8nnpo"]
+[ext_resource type="Script" uid="uid://c21r2av87n08u" path="res://Scripts/PauseUI.gd" id="2_iylmw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnpo"]
 size = Vector2(7.5752144, 26.946575)
@@ -9,6 +10,7 @@ size = Vector2(7.5752144, 26.946575)
 scale = Vector2(0.8879742, 1.1595513)
 
 [node name="Player" parent="." unique_id=890080282 instance=ExtResource("1_8nnpo")]
+position = Vector2(645.28906, 276.8312)
 scale = Vector2(-1.7538306, 1.3404828)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1240516990]
@@ -18,3 +20,57 @@ scale = Vector2(117.03801, 5.088949)
 position = Vector2(0.5292182, 74.226)
 scale = Vector2(1.271058, 1)
 shape = SubResource("RectangleShape2D_8nnpo")
+
+[node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=734797093]
+process_mode = 3
+script = ExtResource("2_iylmw")
+
+[node name="PauseMenu" type="Control" parent="PauseCanvas" unique_id=110095036]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseCanvas/PauseMenu" unique_id=1867161570]
+modulate = Color(0, 0, 0, 0.3372549)
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="PauseCanvas/PauseMenu" unique_id=783693838]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 63.0
+offset_right = 745.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 42
+text = "Menu de pausa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continuar" type="Button" parent="PauseCanvas/PauseMenu" unique_id=1256718686]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 302.0
+offset_right = 679.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 36
+text = "Continuar
+"
+icon_alignment = 1
+
+[node name="Sair" type="Button" parent="PauseCanvas/PauseMenu" unique_id=465258843]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 413.0
+offset_right = 679.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 36
+text = "Sair"
+icon_alignment = 1
+
+[connection signal="pressed" from="PauseCanvas/PauseMenu/Continuar" to="PauseCanvas" method="_on_continuar_pressed"]
+[connection signal="pressed" from="PauseCanvas/PauseMenu/Sair" to="PauseCanvas" method="_on_sair_pressed"]
