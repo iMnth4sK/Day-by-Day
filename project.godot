@@ -13,7 +13,6 @@ config_version=5
 config/name="Day by Day"
 run/main_scene="uid://y54sgc3wrobu"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d3f2w2u0b78kp"]
 
-[ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/player.tscn" id="1_8nnpo"]
-[ext_resource type="Script" uid="uid://c21r2av87n08u" path="res://Scripts/PauseUI.gd" id="2_iylmw"]
+[ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/Player/player.tscn" id="1_8nnpo"]
+[ext_resource type="Script" uid="uid://c21r2av87n08u" path="res://Scripts/UI/PauseUI.gd" id="2_iylmw"]
 [ext_resource type="Texture2D" uid="uid://bcaicjyajyyii" path="res://Art/City/SELI-tile00.jpg" id="3_l1yxy"]
 [ext_resource type="Texture2D" uid="uid://b0mm4kfrun0ok" path="res://Art/City/SELI-tile01.jpg" id="4_7w63j"]
 [ext_resource type="Texture2D" uid="uid://djege5j37wwby" path="res://Art/City/SELI-tile13.jpg" id="5_ii3s8"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://fmf26rbuk18q" path="res://Art/City/SELI-tile10.jpg" id="20_d6mn4"]
 [ext_resource type="Texture2D" uid="uid://5j8bxhk80y8j" path="res://Art/City/SELI-tile11.jpg" id="21_tpdn8"]
 [ext_resource type="Texture2D" uid="uid://dbnloylp7jjge" path="res://Art/City/SELI-tile12.jpg" id="22_s61gn"]
-[ext_resource type="PackedScene" uid="uid://bt470dbuer5pv" path="res://Scenes/NPC.tscn" id="23_e1iit"]
+[ext_resource type="PackedScene" uid="uid://bt470dbuer5pv" path="res://Scenes/NPC/NPC.tscn" id="23_e1iit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnpo"]
 size = Vector2(7.5752144, 26.946575)

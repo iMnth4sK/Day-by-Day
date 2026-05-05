@@ -15,4 +15,4 @@ func _on_opções_pressed() -> void:
 
 
 func _on_novo_jogo_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Loading.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main Menu/Loading.tscn")

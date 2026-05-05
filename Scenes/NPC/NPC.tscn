@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bt470dbuer5pv"]
 
-[ext_resource type="Script" uid="uid://ds1rwdgnoqn4l" path="res://Scripts/character_body_2d.gd" id="1_88kja"]
+[ext_resource type="Script" uid="uid://ds1rwdgnoqn4l" path="res://Scripts/NPC/character_body_2d.gd" id="1_88kja"]
 [ext_resource type="Texture2D" uid="uid://cg5c4tufuimtu" path="res://Art/16x32/16x32 Idle-Sheet.png" id="1_f50pn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij6vw"]
