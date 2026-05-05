@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d0n3uusp55hcd"]
+
+[ext_resource type="Script" uid="uid://cadq4xc56uqpn" path="res://Scripts/hud.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1317494800]
+script = ExtResource("1_e0onf")
+
+[node name="Control" type="Control" parent="." unique_id=233961262]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1274993518]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=1435738314]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=1861193482]
+layout_mode = 2
+
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
