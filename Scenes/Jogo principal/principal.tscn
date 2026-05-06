@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bt470dbuer5pv" path="res://Scenes/NPC/NPC.tscn" id="23_taarm"]
 [ext_resource type="PackedScene" uid="uid://c7culx0jdpgcd" path="res://Scenes/FadeInOut/transition.tscn" id="24_ihk3g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nnpo"]
-size = Vector2(7.5752144, 26.946575)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scaxj"]
 texture = ExtResource("4_1yy54")
 0:0/0 = 0
@@ -6113,14 +6110,6 @@ z_index = 1
 position = Vector2(645.28906, 276.8312)
 scale = Vector2(1.7692937, 1.3794551)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1240516990]
-scale = Vector2(117.03801, 5.088949)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=228389497]
-position = Vector2(-0.80826175, 56.94049)
-scale = Vector2(1.271058, 1)
-shape = SubResource("RectangleShape2D_8nnpo")
-
 [node name="PauseCanvas" type="CanvasLayer" parent="." unique_id=734797093]
 process_mode = 3
 script = ExtResource("2_ihk3g")
@@ -6221,7 +6210,7 @@ tile_map_data = PackedByteArray("AAAGAOz/BAALAAAAAAAGAO3/BAALAAEAAAAGAO7/BAALAAI
 tile_set = SubResource("TileSet_1d07u")
 
 [node name="CharacterBody2D" parent="." unique_id=930602612 instance=ExtResource("23_taarm")]
-position = Vector2(234.24104, -15.523246)
+position = Vector2(279.28738, 151.78285)
 scale = Vector2(2.396437, 1.8279061)
 
 [connection signal="pressed" from="PauseCanvas/PauseMenu/CenterContainer/MainMenu/Continuar" to="PauseCanvas" method="_on_continuar_pressed"]
