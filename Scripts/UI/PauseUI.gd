@@ -1,10 +1,12 @@
 extends CanvasLayer
 
 @onready var main_menu = $PauseMenu/CenterContainer/MainMenu
+@onready var transition = $Transition
 @onready var exit_menu = $PauseMenu/CenterContainer/ExitMenu
 
 func _ready():
 	# Garante que o menu comece escondido e no estado certo
+	transition.fade_in()
 	visible = false
 	_show_main_menu()
 
@@ -45,8 +47,10 @@ func _on_voltar_pressed():
 	_show_main_menu()
 
 func _on_sair_do_jogo_pressed():
+	await transition.fade_out()
 	get_tree().quit()
 
 func _on_menu_principal_pressed() -> void:
 	get_tree().paused = false # IMPORTANTE: Despausa antes de mudar de cena
+	await transition.fade_out()
 	get_tree().change_scene_to_file("res://scenes/Main Menu/MainMenu.tscn")
