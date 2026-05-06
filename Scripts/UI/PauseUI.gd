@@ -1,31 +1,52 @@
 extends CanvasLayer
 
-@onready var pause_menu = $PauseMenu
+@onready var main_menu = $PauseMenu/CenterContainer/MainMenu
+@onready var exit_menu = $PauseMenu/CenterContainer/ExitMenu
 
 func _ready():
-	# Começa o jogo com o menu escondido
-	pause_menu.hide()
+	# Garante que o menu comece escondido e no estado certo
+	visible = false
+	_show_main_menu()
 
 func _input(event):
-	# Verifica se apertou ESC
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel"): # Geralmente a tecla ESC
 		toggle_pause()
 
 func toggle_pause():
 	# Inverte o estado de pausa do jogo
-	var new_pause_state = !get_tree().paused
-	get_tree().paused = new_pause_state
+	get_tree().paused = !get_tree().paused
 	
-	# Mostra ou esconde o menu
-	if new_pause_state:
-		pause_menu.show()
-	else:
-		pause_menu.hide()
+	# O CanvasLayer (self) fica visível
+	visible = get_tree().paused 
+	
+	# Garante que o nó que segura os menus também apareça
+	$PauseMenu.visible = visible 
+	
+	if visible:
+		_show_main_menu()
 
-# --- CONEXÃO DOS BOTÕES ---
+func _show_main_menu():
+	main_menu.visible = true
+	exit_menu.visible = false
+
+func _show_exit_menu():
+	main_menu.visible = false
+	exit_menu.visible = true
+
+# --- Sinais dos Botões ---
 
 func _on_continuar_pressed():
-	toggle_pause() # Despausa e fecha o menu
+	toggle_pause()
 
 func _on_sair_pressed():
-	get_tree().quit() # Fecha o jogo
+	_show_exit_menu()
+
+func _on_voltar_pressed():
+	_show_main_menu()
+
+func _on_sair_do_jogo_pressed():
+	get_tree().quit()
+
+func _on_menu_principal_pressed() -> void:
+	get_tree().paused = false # IMPORTANTE: Despausa antes de mudar de cena
+	get_tree().change_scene_to_file("res://scenes/Main Menu/MainMenu.tscn")
