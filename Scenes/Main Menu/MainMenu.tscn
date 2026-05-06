@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://y54sgc3wrobu"]
 
 [ext_resource type="Script" uid="uid://bvp0woapt06d8" path="res://Scripts/Main Menu/MainMenuButtons.gd" id="1_sjmnu"]
+[ext_resource type="PackedScene" uid="uid://c7culx0jdpgcd" path="res://Scenes/FadeInOut/transition.tscn" id="2_icfkg"]
 
 [node name="Control" type="Control" unique_id=2018034980]
 layout_mode = 3
@@ -10,6 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sjmnu")
+
+[node name="Transition" parent="." unique_id=25476412 instance=ExtResource("2_icfkg")]
 
 [node name="Sair" type="Button" parent="." unique_id=956579653]
 layout_mode = 1

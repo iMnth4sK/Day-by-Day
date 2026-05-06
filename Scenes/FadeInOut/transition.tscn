@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c7culx0jdpgcd"]
+
+[ext_resource type="Script" uid="uid://dqtue3ftrpgqp" path="res://Scripts/UI/FadeInOut/transition.gd" id="1_mpn32"]
+
+[node name="Transition" type="CanvasLayer" unique_id=25476412]
+script = ExtResource("1_mpn32")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1463821657]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
