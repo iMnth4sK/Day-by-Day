@@ -61,5 +61,11 @@ frame_progress = 0.009054787
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1704292457]
 shape = SubResource("CapsuleShape2D_qp52p")
 
+[node name="ChatAnchor" type="Marker2D" parent="." unique_id=1769175037]
+
+[node name="Label" type="Label" parent="ChatAnchor" unique_id=1837762280]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
