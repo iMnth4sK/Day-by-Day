@@ -64,10 +64,12 @@ frame_progress = 0.009054787
 shape = SubResource("CapsuleShape2D_qp52p")
 
 [node name="ChatAnchor" type="Marker2D" parent="." unique_id=1769175037]
+position = Vector2(-19, -35)
 
 [node name="PanelContainer" type="PanelContainer" parent="ChatAnchor" unique_id=1398420430]
-offset_right = 40.0
-offset_bottom = 40.0
+modulate = Color(1, 1, 1, 0.9764706)
+offset_right = 39.0
+offset_bottom = 23.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_u75bn")
 
 [node name="MarginContainer" type="MarginContainer" parent="ChatAnchor/PanelContainer" unique_id=1130318497]

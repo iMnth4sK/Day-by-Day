@@ -3,7 +3,7 @@ extends CharacterBody2D
 var can_interact = false
 
 # Referências
-@onready var chat_label = $ChatAnchor/Label # Ajuste o caminho se necessário
+@onready var chat_label = $ChatAnchor/PanelContainer/MarginContainer/Label # Ajuste o caminho se necessário
 @onready var dialogue_ui = get_parent().get_node_or_null("DialogueUI")
 
 func _on_interaction_area_body_entered(body):
