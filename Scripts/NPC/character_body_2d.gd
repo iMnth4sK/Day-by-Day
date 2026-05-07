@@ -1,40 +1,40 @@
 extends CharacterBody2D
 
-# Variável para rastrear se o jogador está na área de interação
 var can_interact = false
 
-# Referência para o nó de UI do diálogo
+# Referências
+@onready var chat_label = $ChatAnchor/Label # Ajuste o caminho se necessário
 @onready var dialogue_ui = get_parent().get_node_or_null("DialogueUI")
-# Referência para a HUD (ajuste o caminho conforme sua árvore de nós)
-@onready var hud = get_node_or_null("../HUD")
 
-# Função que roda quando algo entra na área de interação
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player": 
-		print("O jogador está perto e pode interagir!")
 		can_interact = true
+		show_floating_message("Aperte E para falar")
 
-# Função que roda quando algo sai da área de interação
 func _on_interaction_area_body_exited(body):
 	if body.name == "Player":
-		print("O jogador saiu da área.")
 		can_interact = false
-		if dialogue_ui and dialogue_ui.visible:
-			dialogue_ui.hide()
+		chat_label.hide()
 
-# Função para lidar com a entrada do usuário
 func _input(event):
 	if can_interact and event.is_action_pressed("interact"):
-		print("Interação iniciada!")
 		interact_with_npc()
 
-# Função principal de interação
 func interact_with_npc():
+	# Agora ele fala em cima da cabeça em vez de só dar print
+	show_floating_message("Olá! Eu sou um NPC de testes.")
+	
 	if dialogue_ui:
 		dialogue_ui.show()
-		print("Iniciando diálogo via DialogueUI...")
-	elif hud:
-		hud.show()
-		print("Iniciando diálogo via HUD...")
-	else:
-		print("Olá! Eu sou um NPC para testes (nenhuma UI encontrada).")
+
+# Função mágica para a mensagem flutuante
+func show_floating_message(text: String):
+	chat_label.text = text
+	chat_label.show()
+	
+	# Cria um timer via código para esconder a mensagem após 3 segundos
+	await get_tree().create_timer(3.0).timeout
+	
+	# Só esconde se o texto ainda for o mesmo (evita bugar se você falar rápido)
+	if chat_label.text == text:
+		chat_label.hide()
