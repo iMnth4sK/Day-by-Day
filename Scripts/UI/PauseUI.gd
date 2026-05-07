@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var exit_menu = $PauseMenu/CenterContainer/ExitMenu
 
 func _ready():
+	print(GameManager.database["player_name"])
 	# Garante que o menu comece escondido e no estado certo
 	transition.fade_in()
 	visible = false

@@ -5,11 +5,18 @@ const SAVE_PATH = "user://save_game.dat"
 
 # Sua Base de Dados (Dicionário com tudo que você quer salvar)
 var database = {
-	"player_name": "Gustavo",
+	"player_name": "",
 	"itens_coletados": 0,
 	"npc_conversa_concluida": false,
 	"posicao_player": Vector2.ZERO
 }
+func reset_data():
+	database = {
+		"player_name": "",
+		"itens_coletados": 0,
+		"npc_conversa_concluida": false,
+		"posicao_player": Vector2.ZERO
+	}
 
 func _ready():
 	# Assim que o jogo abre, ele tenta carregar o progresso anterior

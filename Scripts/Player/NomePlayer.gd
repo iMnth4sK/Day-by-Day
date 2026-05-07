@@ -6,7 +6,8 @@ extends Control
 
 func _ready() -> void:
 	await transition.fade_in()
-	
+
+
 func _on_button_pressed():
 
 	var player_name = input_name.text
@@ -16,6 +17,12 @@ func _on_button_pressed():
 		return
 
 	error_label.visible = false
+
+	# SALVA O NOME NO DATABASE
+	GameManager.database["player_name"] = player_name
+
+	# ESCREVE O SAVE NO DISCO
+	GameManager.save_game()
 
 	await transition.fade_out()
 
