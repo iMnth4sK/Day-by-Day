@@ -29,7 +29,7 @@ func interact_with_npc():
 
 # Função mágica para a mensagem flutuante
 func show_floating_message(text: String):
-	chat_label.text = text
+w	chat_label.text = text
 	chat_label.show()
 	
 	# Cria um timer via código para esconder a mensagem após 3 segundos
