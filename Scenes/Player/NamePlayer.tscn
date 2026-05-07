@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c145g54rlte6d"]
+
+[ext_resource type="Script" uid="uid://5xgum8vpe0i4" path="res://Scripts/Player/NomePlayer.gd" id="1_3vd8u"]
+[ext_resource type="PackedScene" uid="uid://c7culx0jdpgcd" path="res://Scenes/FadeInOut/transition.tscn" id="2_0bysg"]
+
+[node name="Control" type="Control" unique_id=752147250]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3vd8u")
+
+[node name="Transition" parent="." unique_id=25476412 instance=ExtResource("2_0bysg")]
+
+[node name="Panel" type="Panel" parent="." unique_id=1607411532]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1137.0
+offset_bottom = 631.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=534999214]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 29.0
+offset_right = 273.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 52
+text = "Qual é o seu nome?"
+
+[node name="ErrorLabel" type="Label" parent="." unique_id=312585832]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_top = 105.0
+offset_right = 529.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0.5689727, 0.56897277, 0.5689727, 1)
+theme_override_font_sizes/font_size = 34
+text = "Digite um nome!"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=201292026]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 438.0
+offset_right = 655.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Digite seu nome..."
+
+[node name="Button" type="Button" parent="." unique_id=1954561891]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 550.0
+offset_right = 996.0
+offset_bottom = 629.0
+theme_override_font_sizes/font_size = 32
+text = "Continuar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

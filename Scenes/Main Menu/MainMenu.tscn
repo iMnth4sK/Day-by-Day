@@ -13,7 +13,6 @@ grow_vertical = 2
 script = ExtResource("1_sjmnu")
 
 [node name="Transition" parent="." unique_id=25476412 instance=ExtResource("2_icfkg")]
-visible = false
 
 [node name="Sair" type="Button" parent="." unique_id=956579653]
 layout_mode = 1
