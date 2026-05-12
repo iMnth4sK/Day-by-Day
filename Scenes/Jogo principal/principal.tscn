@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://duojluq1q5jyy"]
 
 [ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/Player/player.tscn" id="1_5xnji"]
+[ext_resource type="Script" uid="uid://dxt5fhd3dbalm" path="res://Scripts/Principal/principal.gd" id="1_wnocm"]
 [ext_resource type="Script" uid="uid://c21r2av87n08u" path="res://Scripts/UI/PauseUI.gd" id="2_ihk3g"]
 [ext_resource type="Texture2D" uid="uid://nb8mrwo5h7np" path="res://Art/content.png" id="4_1yy54"]
 [ext_resource type="Texture2D" uid="uid://cn760ats4u41c" path="res://Art/Tilesets/Floors_Tiles.png" id="6_x0rve"]
@@ -9173,9 +9174,12 @@ sources/4 = SubResource("TileSetAtlasSource_kwp52")
 sources/5 = SubResource("TileSetAtlasSource_3o5tf")
 
 [node name="principal" type="Node2D" unique_id=885252157]
-scale = Vector2(0.8879742, 1.1595513)
+scale = Vector2(0.992, 1.301)
 
-[node name="Player" parent="." unique_id=890080282 instance=ExtResource("1_5xnji")]
+[node name="GameGate" type="Node" parent="." unique_id=2011225040]
+script = ExtResource("1_wnocm")
+
+[node name="Player" parent="." unique_id=890080282 groups=["player"] instance=ExtResource("1_5xnji")]
 z_index = 1
 position = Vector2(645.28906, 276.8312)
 scale = Vector2(1.7692937, 1.3794551)
@@ -9186,10 +9190,8 @@ script = ExtResource("2_ihk3g")
 
 [node name="Transition" parent="PauseCanvas" unique_id=25476412 instance=ExtResource("24_ihk3g")]
 layer = 100
-visible = false
 
 [node name="PauseMenu" type="Control" parent="PauseCanvas" unique_id=110095036]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -9199,9 +9201,12 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="PauseCanvas/PauseMenu" unique_id=1867161570]
 modulate = Color(0, 0, 0, 0.3372549)
-layout_mode = 0
-offset_right = 1148.0
-offset_bottom = 650.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
 
 [node name="CenterContainer" type="CenterContainer" parent="PauseCanvas/PauseMenu" unique_id=1787833075]

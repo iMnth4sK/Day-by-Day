@@ -48,10 +48,13 @@ func _on_voltar_pressed():
 	_show_main_menu()
 
 func _on_sair_do_jogo_pressed():
+	GameManager.save_game()
 	await transition.fade_out()
 	get_tree().quit()
 
 func _on_menu_principal_pressed() -> void:
-	get_tree().paused = false # IMPORTANTE: Despausa antes de mudar de cena
+	GameManager.save_game()
+	await get_tree().process_frame
+	get_tree().paused = false
 	await transition.fade_out()
-	get_tree().change_scene_to_file("res://scenes/Main Menu/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main Menu/MainMenu.tscn")

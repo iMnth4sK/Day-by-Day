@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://duys3qqg8gs8i"]
+
+[ext_resource type="Script" uid="uid://boq6whqxw1aai" path="res://SaveSelect.gd" id="1_ke4f6"]
+
+[node name="Control" type="Control" unique_id=1576203268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ke4f6")
+
+[node name="BackButton" type="Button" parent="." unique_id=1800370601]
+layout_mode = 0
+offset_left = 949.0
+offset_top = 601.0
+offset_right = 1262.0
+offset_bottom = 702.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 41
+text = "Voltar"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1540785755]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 42.0
+offset_top = -304.0
+offset_right = 704.0
+offset_bottom = 304.0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=861212255]
+layout_mode = 2
+
+[node name="Slot1" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1282466177]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="DelSlot1" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1433979406]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+action_mode = 0
+text = "Apagar save 1"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1658790224]
+layout_mode = 2
+
+[node name="Slot2" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1964376264]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="DelSlot2" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1854195707]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+action_mode = 0
+text = "Apagar save 2"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1418980253]
+layout_mode = 2
+
+[node name="Slot3" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=1324667410]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="DelSlot3" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=498007222]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+text = "Apagar save 3"
+
+[node name="DeleteConfirm" type="ConfirmationDialog" parent="." unique_id=1970598742]
+oversampling_override = 1.0
+title = "Apagar Save"
+position = Vector2i(0, 36)
+size = Vector2i(339, 106)
+dialog_text = "Tem certeza que deseja apagar este save?
+Essa ação não pode ser desfeita."
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/DelSlot1" to="." method="_on_del_slot_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/DelSlot2" to="." method="_on_del_slot_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/DelSlot3" to="." method="_on_del_slot_3_pressed"]
+[connection signal="confirmed" from="DeleteConfirm" to="." method="_on_delete_confirm_confirmed"]

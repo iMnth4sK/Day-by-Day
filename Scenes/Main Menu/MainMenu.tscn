@@ -29,10 +29,10 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(5.87, 0)
 
-[node name="NovoJogo" type="Button" parent="VBoxContainer" unique_id=1354825930]
+[node name="Iniciar" type="Button" parent="VBoxContainer" unique_id=1354825930]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Novo Jogo"
+text = "Iniciar"
 
 [node name="Opções" type="Button" parent="VBoxContainer" unique_id=2132673183]
 layout_mode = 2
@@ -44,6 +44,7 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Sair"
 
-[connection signal="pressed" from="VBoxContainer/NovoJogo" to="." method="_on_novo_jogo_pressed"]
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_novo_jogo_pressed"]
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Opções" to="." method="_on_opções_pressed"]
 [connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]

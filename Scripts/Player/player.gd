@@ -24,12 +24,34 @@ var last_direction: String = "down"
 @onready var stamina_bar = $StaminaBar 
 var sprite_base_y: float
 
+func save_player_data():
+	print("PLAYER SALVANDO:", global_position)
+	GameManager.database["posicao_player"] = global_position
+
 func _ready():
+
 	sprite_base_y = anim.position.y
+
 	stamina_bar.max_value = max_stamina
 	stamina_bar.value = current_stamina
 	stamina_bar.hide()
 
+	var pos = GameManager.database.get("posicao_player", null)
+
+	if pos is Vector2:
+		global_position = pos
+	else:
+		global_position = Vector2.ZERO
+
+	# força atualização imediata da câmera
+	reset_physics_interpolation()
+
+	var camera = get_viewport().get_camera_2d()
+	if camera:
+		camera.reset_smoothing()
+
+	GameManager.game_ready = true
+	
 func _physics_process(delta):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var is_running = Input.is_key_pressed(KEY_SHIFT) and input_dir != Vector2.ZERO and can_run
