@@ -22,7 +22,7 @@ var life_stage := "child"
 const DAYS_PER_YEAR := 365
 
 
-func next_day():
+func next_day(save := true):
 
 	day += 1
 	print("Dia atual:", day)
@@ -35,7 +35,8 @@ func next_day():
 		update_life_stage()
 
 	emit_signal("day_passed")
-	save_game()
+	if save:
+		save_game()
 
 
 func update_life_stage():
@@ -73,10 +74,6 @@ func save_game():
 	if GameManager:
 		GameManager.database["time"] = get_save_data()
 		GameManager.save_game()
-		
-func _input(event):
-	if event.is_action_pressed("debug_next_day"):
-		next_day()
 
 func reset_time():
 

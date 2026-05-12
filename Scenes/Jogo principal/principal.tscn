@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://duojluq1q5jyy"]
 
 [ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/Player/player.tscn" id="1_5xnji"]
-[ext_resource type="Script" uid="uid://dxt5fhd3dbalm" path="res://Scripts/Principal/principal.gd" id="1_wnocm"]
 [ext_resource type="Script" uid="uid://c21r2av87n08u" path="res://Scripts/UI/PauseUI.gd" id="2_ihk3g"]
 [ext_resource type="Texture2D" uid="uid://nb8mrwo5h7np" path="res://Art/content.png" id="4_1yy54"]
 [ext_resource type="Texture2D" uid="uid://cn760ats4u41c" path="res://Art/Tilesets/Floors_Tiles.png" id="6_x0rve"]
@@ -9176,9 +9175,6 @@ sources/5 = SubResource("TileSetAtlasSource_3o5tf")
 [node name="principal" type="Node2D" unique_id=885252157]
 scale = Vector2(0.992, 1.301)
 
-[node name="GameGate" type="Node" parent="." unique_id=2011225040]
-script = ExtResource("1_wnocm")
-
 [node name="Player" parent="." unique_id=890080282 groups=["player"] instance=ExtResource("1_5xnji")]
 z_index = 1
 position = Vector2(645.28906, 276.8312)
@@ -9190,6 +9186,7 @@ script = ExtResource("2_ihk3g")
 
 [node name="Transition" parent="PauseCanvas" unique_id=25476412 instance=ExtResource("24_ihk3g")]
 layer = 100
+visible = false
 
 [node name="PauseMenu" type="Control" parent="PauseCanvas" unique_id=110095036]
 layout_mode = 3
@@ -9240,6 +9237,12 @@ text = "Continuar
 "
 icon_alignment = 1
 
+[node name="Opções" type="Button" parent="PauseCanvas/PauseMenu/CenterContainer/MainMenu" unique_id=334252113]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Opções"
+icon_alignment = 1
+
 [node name="Sair" type="Button" parent="PauseCanvas/PauseMenu/CenterContainer/MainMenu" unique_id=465258843]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
@@ -9247,7 +9250,6 @@ text = "Sair"
 icon_alignment = 1
 
 [node name="ExitMenu" type="VBoxContainer" parent="PauseCanvas/PauseMenu/CenterContainer" unique_id=1661884722]
-visible = false
 layout_mode = 2
 alignment = 1
 
