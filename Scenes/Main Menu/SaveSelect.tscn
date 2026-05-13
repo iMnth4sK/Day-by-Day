@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duys3qqg8gs8i"]
 
-[ext_resource type="Script" uid="uid://boq6whqxw1aai" path="res://SaveSelect.gd" id="1_ke4f6"]
+[ext_resource type="Script" uid="uid://boq6whqxw1aai" path="res://Scripts/UI/SaveSelect.gd" id="1_ke4f6"]
 
 [node name="Control" type="Control" unique_id=1576203268]
 layout_mode = 3

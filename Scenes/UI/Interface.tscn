@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://b8pbulr0lmlkh"]
+
+[ext_resource type="Script" uid="uid://dividsj063j4o" path="res://Scripts/UI/interface.gd" id="1_53c37"]
+[ext_resource type="Texture2D" uid="uid://bker2oyxhhys7" path="res://Assets/Spinning-Floppy-Disk.png" id="2_eqcad"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0flv"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6h5q"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmo4e"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uca0w"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5ux5"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptrht"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r45q"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iar3"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otdhf"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0t8y"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3f5i"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1mgo"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2de35"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrspf"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsl4e"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(224, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kock"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(240, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8g8f"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(256, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiy85"]
+atlas = ExtResource("2_eqcad")
+region = Rect2(272, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pb74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0flv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6h5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmo4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uca0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5ux5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptrht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r45q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iar3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otdhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0t8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3f5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1mgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2de35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrspf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsl4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kock")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8g8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiy85")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Interface" type="CanvasLayer" unique_id=281610758]
+script = ExtResource("1_53c37")
+
+[node name="AutoSaveAnim" type="AnimatedSprite2D" parent="." unique_id=265925616]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(42, 34)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_3pb74")

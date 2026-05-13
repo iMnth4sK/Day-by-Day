@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://byn2ufe3qasek"]
+
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="1_05tab"]
+[ext_resource type="Script" uid="uid://d38pqkk1kilrw" path="res://Scripts/UI/OptionsUI.gd" id="1_xva3s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k18g8"]
+bg_color = Color(0.050980393, 0.05490196, 0.06666667, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.09620472, 0.096204765, 0.096204646, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="Opções" type="Panel" unique_id=364505951]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k18g8")
+script = ExtResource("1_xva3s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1421656177]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=912922381]
+custom_minimum_size = Vector2(600, 60)
+layout_mode = 2
+
+[node name="Geral" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=134370369]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 25
+text = "GERAL"
+
+[node name="Sons" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1234093121]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 25
+text = "SONS"
+
+[node name="Controles" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=931909725]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 25
+text = "CONTROLES"
+
+[node name="Sistema" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=666334045]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 25
+text = "SISTEMA"
+
+[node name="voltar" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1216400216]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1531047444]
+custom_minimum_size = Vector2(610, 0)
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="VBoxContainer" unique_id=1859892764]
+custom_minimum_size = Vector2(600, 330)
+layout_mode = 2
+
+[node name="GeralPage" type="Control" parent="VBoxContainer/Content" unique_id=213564404]
+visible = false
+layout_mode = 2
+
+[node name="SonsPage" type="Control" parent="VBoxContainer/Content" unique_id=309091852]
+visible = false
+custom_minimum_size = Vector2(595, 335)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Content/SonsPage" unique_id=1462229693]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 22
+text = "Volume da Música"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/Content/SonsPage" unique_id=850065724]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 29.5
+offset_right = 211.0
+offset_bottom = 45.5
+max_value = 1.0
+step = 0.05
+scrollable = false
+
+[node name="ControlesPage" type="Control" parent="VBoxContainer/Content" unique_id=330265504]
+visible = false
+layout_mode = 2
+
+[node name="SistemaPage" type="Control" parent="VBoxContainer/Content" unique_id=100740]
+layout_mode = 2
+
+[node name="AutoSaveToggle" type="CheckButton" parent="VBoxContainer/Content/SistemaPage" unique_id=1262538011]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("1_05tab")
+theme_override_font_sizes/font_size = 22
+text = "Auto-Save"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Geral" to="." method="_on_geral_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Sons" to="." method="_on_sons_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Sistema" to="." method="_on_sistema_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/voltar" to="." method="_on_fechar_pressed"]
+[connection signal="toggled" from="VBoxContainer/Content/SistemaPage/AutoSaveToggle" to="." method="_on_auto_save_toggled"]

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bvp0woapt06d8" path="res://Scripts/Main Menu/MainMenuButtons.gd" id="1_sjmnu"]
 [ext_resource type="PackedScene" uid="uid://c7culx0jdpgcd" path="res://Scenes/FadeInOut/transition.tscn" id="2_icfkg"]
+[ext_resource type="AudioStream" uid="uid://dbobdm6rxpage" path="res://Audio/The Verdant Grove.ogg" id="2_rgre6"]
+[ext_resource type="PackedScene" uid="uid://byn2ufe3qasek" path="res://Scenes/UI/Opções.tscn" id="4_7x5ku"]
 
 [node name="Control" type="Control" unique_id=2018034980]
 layout_mode = 3
@@ -11,6 +13,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sjmnu")
+
+[node name="TheVerdantGrove" type="AudioStreamPlayer" parent="." unique_id=1522046782]
+stream = ExtResource("2_rgre6")
+autoplay = true
+bus = &"Musica"
 
 [node name="Transition" parent="." unique_id=25476412 instance=ExtResource("2_icfkg")]
 
@@ -44,7 +51,10 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Sair"
 
-[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_novo_jogo_pressed"]
+[node name="Opções" parent="." unique_id=364505951 instance=ExtResource("4_7x5ku")]
+layout_mode = 1
+
 [connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_novo_jogo_pressed"]
 [connection signal="pressed" from="VBoxContainer/Opções" to="." method="_on_opções_pressed"]
 [connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]

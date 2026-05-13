@@ -4,31 +4,42 @@ extends CanvasLayer
 @onready var panel = $PanelContainer
 
 func _ready():
-	#esc Começa ondido, só aparece quando você chamar
+	# Começa escondido
 	visible = false 
-	# Sincroniza o botão com o estado atual do GameManager
+	# Sincroniza o estado inicial
+	_atualizar_ui()
+
+func _input(event):
+	# Atalho para abrir o menu
+	if event.is_action_pressed("debug_key"):
+		visible = !visible
+		if visible:
+			_atualizar_ui() # Garante que o botão mostre o estado real do GameManager
+
+func _atualizar_ui():
 	if GameManager:
 		auto_save_btn.button_pressed = GameManager.auto_save_enabled
 
-func _input(event):
-	# Use a tecla "Aspas" ou "F1" (configure no Input Map como 'debug_key')
-	if event.is_action_pressed("debug_key"):
-		visible = !visible
+# --- BOTÕES DE TEMPO ---
 
 func _on_btn_next_day_pressed():
-	# Passamos 'false' para o dia passar sem travar o jogo salvando toda hora
-	GameTime.next_day(false)
-	print("Debug: Dia pulado.")
+	# Avança um dia. O 'false' evita que o jogo salve automaticamente no processo.
+	if Engine.has_singleton("GameTime") or get_node_or_null("/root/GameTime"):
+		GameTime.next_day(false)
+		print("Debug: Dia pulado.")
 
 func _on_btn_add_year_pressed():
-	# Loop para simular o passar de um ano rapidamente
-	for i in range(365):
-		GameTime.next_day(false)
-	print("Debug: +1 Ano adicionado.")
+	if Engine.has_singleton("GameTime") or get_node_or_null("/root/GameTime"):
+		for i in range(365):
+			GameTime.next_day(false)
+		print("Debug: +1 Ano adicionado.")
 
+# --- CONTROLE DE CONFIGURAÇÃO ---
+
+# Use este sinal (toggled) para botões de alternância (CheckButton/CheckBox)
 func _on_toggle_auto_save_toggled(toggled_on):
 	GameManager.auto_save_enabled = toggled_on
-	print("Auto-save definido para: ", toggled_on)
+	print("Debug: Auto-save definido para: ", toggled_on)
 
-func _on_toggle_auto_save_pressed() -> void:
-	pass # Replace with function body.
+# Esta função era inútil/duplicada, pode apagar o sinal 'pressed' no editor
+# e manter apenas o 'toggled' acima.

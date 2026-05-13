@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5j8bxhk80y8j"
-path.s3tc="res://.godot/imported/SELI-tile11.jpg-9df72163e92af92e92df258874c3510d.s3tc.ctex"
+uid="uid://bker2oyxhhys7"
+path="res://.godot/imported/Spinning-Floppy-Disk.png-bdbcebdbe5e11b5f697605e3c410b030.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/City/SELI-tile11.jpg"
-dest_files=["res://.godot/imported/SELI-tile11.jpg-9df72163e92af92e92df258874c3510d.s3tc.ctex"]
+source_file="res://Assets/Spinning-Floppy-Disk.png"
+dest_files=["res://.godot/imported/Spinning-Floppy-Disk.png-bdbcebdbe5e11b5f697605e3c410b030.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

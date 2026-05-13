@@ -29,27 +29,39 @@ func save_player_data():
 	GameManager.database["posicao_player"] = global_position
 
 func _ready():
-
+	# 1. Configurações de UI
 	sprite_base_y = anim.position.y
-
 	stamina_bar.max_value = max_stamina
 	stamina_bar.value = current_stamina
 	stamina_bar.hide()
-
-	var pos = GameManager.database.get("posicao_player", null)
-
-	if pos is Vector2:
-		global_position = pos
+	
+	# 2. BUSCA A POSIÇÃO COM FILTRO
+	var pos_salva = GameManager.database.get("posicao_player", null)
+	
+	# O SEGREDO ESTÁ AQUI: 
+	# Só aplicamos a posição se ela existir E não for (0,0) 
+	# (Assumindo que (0,0) não é um lugar válido de spawn no seu mapa)
+	if pos_salva is Vector2 and pos_salva != Vector2.ZERO:
+		global_position = pos_salva
 	else:
-		global_position = Vector2.ZERO
+		# Se for save novo, NÃO TOCAMOS na global_position.
+		# O Player vai ficar exatamente onde você o posicionou na cena 'principal.tscn'.
+		pass
 
-	# força atualização imediata da câmera
-	reset_physics_interpolation()
-
+	# 3. AJUSTE DA CÂMERA (Para não dar o tranco)
 	var camera = get_viewport().get_camera_2d()
 	if camera:
+		camera.position_smoothing_enabled = false # Desliga o deslize
+		camera.global_position = global_position
 		camera.reset_smoothing()
-
+		camera.align()
+	
+	# 4. LIBERAÇÃO
+	await get_tree().process_frame
+	if camera:
+		camera.position_smoothing_enabled = true # Religa o deslize
+	
+	visible = true
 	GameManager.game_ready = true
 	
 func _physics_process(delta):
