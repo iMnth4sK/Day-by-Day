@@ -141,7 +141,9 @@ animations = [{
 script = ExtResource("1_53c37")
 
 [node name="AutoSaveAnim" type="AnimatedSprite2D" parent="." unique_id=265925616]
+process_mode = 3
 modulate = Color(1, 1, 1, 0)
 position = Vector2(42, 34)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3pb74")
+frame_progress = 0.8977851

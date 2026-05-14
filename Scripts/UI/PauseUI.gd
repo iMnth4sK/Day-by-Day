@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var main_menu = $PauseMenu/CenterContainer/MainMenu
 @onready var confirm_save_menu = $PauseMenu/CenterContainer/ConfirmSaveMenu
-@onready var save_feedback = $PauseMenu/SaveFeedback
 @onready var transition = $Transition
 @onready var menu_opcoes = $PauseMenu/CenterContainer/Opções
 var destino_saida = "" 
@@ -13,7 +12,6 @@ func _ready():
 	menu_opcoes.visible = false
 	menu_opcoes.modulate.a = 0
 	visible = false
-	save_feedback.visible = false
 	_show_main_menu()
 	menu_opcoes.close_requested.connect(_on_voltar_das_opcoes)
 	
@@ -66,11 +64,16 @@ func _on_sair_pressed():
 # --- BOTÕES DA JANELA DE CONFIRMAÇÃO (ConfirmSaveMenu) ---
 
 func _on_salvar_e_sair_pressed():
+	Interface.play_autosave() 
+	await transition.fade_in()
 	GameManager.force_save() # Salva o jogo
-	await _mostrar_feedback_salvo() # Mostra o "Sucesso!"
+	
+	await get_tree().create_timer(0.5).timeout
+	
 	_finalizar_saida()
 
 func _on_sair_sem_salvar_pressed():
+	await transition.fade_out()
 	_finalizar_saida()
 
 func _on_cancelar_pressed():
@@ -79,22 +82,15 @@ func _on_cancelar_pressed():
 # --- FUNÇÕES DE LOGICA ---
 
 func _executar_salvamento_visual():
-	if busy:
-		return
+	if busy: return
 	busy = true
+	
+	# Passamos 'true' para o novo parâmetro ignore_pause
+	Interface.play_autosave(0, true) 
+	
 	GameManager.save_game()
-	await _mostrar_feedback_salvo()
+	await get_tree().create_timer(1.5, true, false, true).timeout 
 	busy = false
-
-func _mostrar_feedback_salvo():
-	save_feedback.modulate.a = 0
-	save_feedback.visible = true
-	var tween = create_tween()
-	tween.tween_property(save_feedback, "modulate:a", 1.0, 0.3)
-	tween.tween_interval(1.0)
-	tween.tween_property(save_feedback, "modulate:a", 0.0, 0.3)
-	await tween.finished
-	save_feedback.visible = false
 
 func _finalizar_saida():
 	GameManager.game_ready = false

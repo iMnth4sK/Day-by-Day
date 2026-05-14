@@ -9231,20 +9231,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.7058824)
 
-[node name="SaveFeedback" type="Panel" parent="PauseCanvas/PauseMenu" unique_id=198321878]
-layout_mode = 0
-offset_top = 1.0
-offset_right = 119.0
-offset_bottom = 97.0
-
-[node name="Label" type="Label" parent="PauseCanvas/PauseMenu/SaveFeedback" unique_id=326683438]
-layout_mode = 0
-offset_left = 40.0
-offset_right = 226.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("4_qu4a3")
-text = "Jogo Salvo com sucesso!"
-
 [node name="CenterContainer" type="CenterContainer" parent="PauseCanvas/PauseMenu" unique_id=1787833075]
 layout_mode = 1
 anchors_preset = 15

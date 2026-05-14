@@ -18,6 +18,7 @@ script = ExtResource("1_sjmnu")
 stream = ExtResource("2_rgre6")
 autoplay = true
 bus = &"Musica"
+parameters/looping = true
 
 [node name="Transition" parent="." unique_id=25476412 instance=ExtResource("2_icfkg")]
 
