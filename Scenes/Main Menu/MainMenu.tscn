@@ -21,6 +21,7 @@ bus = &"Musica"
 parameters/looping = true
 
 [node name="Transition" parent="." unique_id=25476412 instance=ExtResource("2_icfkg")]
+visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=473156484]
 layout_mode = 1
@@ -53,6 +54,7 @@ size_flags_vertical = 3
 text = "Sair"
 
 [node name="Opções" parent="." unique_id=364505951 instance=ExtResource("4_7x5ku")]
+visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]

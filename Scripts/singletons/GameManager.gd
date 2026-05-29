@@ -24,7 +24,7 @@ func _ready():
 	
 func setup_autosave_timer():
 	autosave_timer = Timer.new()
-	autosave_timer.wait_time = 5.0
+	autosave_timer.wait_time = 300
 	autosave_timer.one_shot = false
 	autosave_timer.autostart = false
 	autosave_timer.connect("timeout", _on_autosave_timeout)
