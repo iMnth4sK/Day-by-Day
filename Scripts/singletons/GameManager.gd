@@ -24,7 +24,7 @@ func _ready():
 	
 func setup_autosave_timer():
 	autosave_timer = Timer.new()
-	autosave_timer.wait_time = 5.0
+	autosave_timer.wait_time = 300.0
 	autosave_timer.one_shot = false
 	autosave_timer.autostart = false
 	autosave_timer.connect("timeout", _on_autosave_timeout)
@@ -49,6 +49,7 @@ func get_default_data():
 		"itens_coletados": 0,
 		"npc_conversa_concluida": false,
 		"posicao_player": Vector2.ZERO,
+		"cena_atual": "res://Scenes/Jogo principal/principal.tscn",
 		"time": {
 			"day": 1,
 			"year": 1,
@@ -110,6 +111,7 @@ func load_game():
 		file.close()
 		if data is Dictionary:
 			database = merge_save_data(get_default_data(), data)
+			GameTime.load_from_save()
 			print("SAVE SLOT", current_slot, "CARREGADO!")
 
 func delete_save(slot: int):

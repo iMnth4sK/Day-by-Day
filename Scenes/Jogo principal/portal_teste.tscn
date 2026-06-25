@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dhlkw35gidffa"]
+
+[ext_resource type="Script" uid="uid://bh3e6tsrnxe5s" path="res://Scripts/portal_teste.gd" id="1_88tvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07rjk"]
+size = Vector2(72, 54)
+
+[node name="PortalTeste" type="Area2D" unique_id=2141324737]
+script = ExtResource("1_88tvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=262210566]
+shape = SubResource("RectangleShape2D_07rjk")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D" unique_id=1592960023]
+offset_left = -36.0
+offset_top = -27.0
+offset_right = 36.0
+offset_bottom = 27.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

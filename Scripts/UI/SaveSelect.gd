@@ -71,6 +71,7 @@ func enter_slot(slot):
 		get_tree().change_scene_to_file("res://Scenes/Main Menu/Loading.tscn")
 	else:
 		GameManager.reset_data()
+		GameTime.reset_time()
 		get_tree().change_scene_to_file("res://Scenes/Player/NamePlayer.tscn")
 	
 func delete_slot(slot):
@@ -78,6 +79,7 @@ func delete_slot(slot):
 	GameManager.delete_save(slot)
 
 	if GameManager.current_slot == slot:
+		GameTime.reset_time()
 		GameManager.reset_data()
 
 	update_slots()

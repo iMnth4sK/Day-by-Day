@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://gg1utuju0w3v"]
+
+[ext_resource type="Script" uid="uid://bj75c0j40v5e8" path="res://Scripts/Cama.gd" id="1_vqkys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgk6m"]
+size = Vector2(30, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wft8a"]
+size = Vector2(19, 41)
+
+[node name="Cama" type="Area2D" unique_id=593541009]
+script = ExtResource("1_vqkys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=884309172]
+shape = SubResource("RectangleShape2D_bgk6m")
+
+[node name="CorpoFisico" type="StaticBody2D" parent="." unique_id=1281615172]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CorpoFisico" unique_id=1784292358]
+shape = SubResource("RectangleShape2D_wft8a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

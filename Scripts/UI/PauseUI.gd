@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var main_menu = $PauseMenu/CenterContainer/MainMenu
 @onready var confirm_save_menu = $PauseMenu/CenterContainer/ConfirmSaveMenu
-@onready var transition = $Transition
+# @onready var transition = $Transition
 @onready var menu_opcoes = $PauseMenu/CenterContainer/Opções
 var destino_saida = "" 
 var busy := false
@@ -65,7 +65,7 @@ func _on_sair_pressed():
 
 func _on_salvar_e_sair_pressed():
 	Interface.play_autosave() 
-	await transition.fade_in()
+	# await transition.fade_in()
 	GameManager.force_save() # Salva o jogo
 	
 	await get_tree().create_timer(0.5).timeout
@@ -73,7 +73,7 @@ func _on_salvar_e_sair_pressed():
 	_finalizar_saida()
 
 func _on_sair_sem_salvar_pressed():
-	await transition.fade_out()
+	# await transition.fade_out()
 	_finalizar_saida()
 
 func _on_cancelar_pressed():
@@ -96,7 +96,7 @@ func _finalizar_saida():
 	GameManager.game_ready = false
 	GameManager.stop_autosave()
 	get_tree().paused = false
-	await transition.fade_out()
+	# await transition.fade_out()
 	if destino_saida == "menu":
 		get_tree().change_scene_to_file("res://Scenes/Main Menu/MainMenu.tscn")
 	else:

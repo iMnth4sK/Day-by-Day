@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://0lis3h7v54vp"]
+
+[ext_resource type="Script" uid="uid://5wnehpxl5g0w" path="res://Scripts/UI/tela_resumo.gd" id="1_e1v4y"]
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="2_41058"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4usd"]
+bg_color = Color(0.06805433, 0.072601, 0.086240746, 1)
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_size = 5
+
+[node name="TelaResumo" type="Control" unique_id=1393213818]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1v4y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=165358783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.050980393, 0.05490196, 0.06666667, 1)
+
+[node name="Panel" type="Panel" parent="." unique_id=820815373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s4usd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=731299372]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1458070166]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_41058")
+theme_override_font_sizes/font_size = 42
+text = "Resumo do Dia:"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer" unique_id=1404907853]
+custom_minimum_size = Vector2(-20, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BotaoAvancar" type="Button" parent="Panel/VBoxContainer" unique_id=682915609]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_41058")
+theme_override_font_sizes/font_size = 24
+text = "Avançar Dia"
+alignment = 2
