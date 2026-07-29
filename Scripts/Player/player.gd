@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 # --- VARIÁVEIS DE CONFIGURAÇÃO ---
-@export var speed: float = 150.0
-@export var run_speed: float = 230.0
+@export var speed: float = 100.0
+@export var run_speed: float = 170.0
 @export var jump_force: float = -350.0
 @export var gravity: float = 1200.0
 @export var jump_anim_speed: float = 2.0
@@ -29,24 +29,31 @@ func save_player_data():
 	GameManager.database["posicao_player"] = global_position
 
 func _ready():
-	# 1. Configurações de UI
 	sprite_base_y = anim.position.y
 	stamina_bar.max_value = max_stamina
 	stamina_bar.value = current_stamina
 	stamina_bar.hide()
 	
-	# 2. BUSCA A POSIÇÃO COM FILTRO
-	var pos_salva = GameManager.database.get("posicao_player", null)
+	print("--- PLAYER CARREGANDO ---")
+	print("Posição original do Editor:", global_position)
 	
-	# O SEGREDO ESTÁ AQUI: 
-	# Só aplicamos a posição se ela existir E não for (0,0) 
-	# (Assumindo que (0,0) não é um lugar válido de spawn no seu mapa)
-	if pos_salva is Vector2 and pos_salva != Vector2.ZERO:
-		global_position = pos_salva
+	if GameManager and GameManager.database.has("posicao_player"):
+		var pos_salva = GameManager.database["posicao_player"]
+		print("🔍 GameManager tem a posição salva:", pos_salva)
+		
+		if pos_salva is Vector2 and pos_salva != Vector2.ZERO:
+			global_position = pos_salva
+			print("✅ Posição do Player alterada para:", global_position)
 	else:
-		# Se for save novo, NÃO TOCAMOS na global_position.
-		# O Player vai ficar exatamente onde você o posicionou na cena 'principal.tscn'.
-		pass
+		print("⚠️ Nenhuma posição salva encontrada no GameManager!")
+
+	# Resto do seu _ready() (Câmera, process_frame, etc...)
+
+	# 1. Configurações de UI
+	sprite_base_y = anim.position.y
+	stamina_bar.max_value = max_stamina
+	stamina_bar.value = current_stamina
+	stamina_bar.hide()
 
 	# 3. AJUSTE DA CÂMERA (Para não dar o tranco)
 	var camera = get_viewport().get_camera_2d()

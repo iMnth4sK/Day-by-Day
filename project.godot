@@ -38,6 +38,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="Day by Day"
 
+[global_group]
+
+Player=""
+
 [input]
 
 ui_cancel={

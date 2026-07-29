@@ -1,7 +1,6 @@
 extends Control
 
 @onready var input_name = $LineEdit
-@onready var error_label = $ErrorLabel
 @onready var transition = $Transition
 
 func _ready() -> void:
@@ -11,12 +10,6 @@ func _ready() -> void:
 func _on_button_pressed():
 
 	var player_name = input_name.text
-
-	if player_name == "":
-		error_label.visible = true
-		return
-
-	error_label.visible = false
 
 	# SALVA O NOME NO DATABASE
 	GameManager.database["player_name"] = player_name

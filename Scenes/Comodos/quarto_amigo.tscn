@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://ch5qbiqp10nti"]
 
 [ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/Player/player.tscn" id="1_1e1x8"]
-[ext_resource type="PackedScene" uid="uid://gg1utuju0w3v" path="res://Scenes/Jogo principal/cama.tscn" id="2_hamrq"]
+[ext_resource type="PackedScene" uid="uid://gg1utuju0w3v" path="res://Scenes/Comodos/cama.tscn" id="2_hamrq"]
+[ext_resource type="PackedScene" uid="uid://d4l5hi2t6b7qx" path="res://Scenes/UI/hud.tscn" id="3_l1jd4"]
 
 [node name="quarto_amigo" type="Node2D" unique_id=1829334529]
 
 [node name="Player" parent="." unique_id=890080282 groups=["player"] instance=ExtResource("1_1e1x8")]
+position = Vector2(646, 362)
 
 [node name="Cama" parent="." unique_id=593541009 instance=ExtResource("2_hamrq")]
-position = Vector2(-109, -60)
+position = Vector2(427, 416)
+
+[node name="HUD" parent="." unique_id=1312395184 instance=ExtResource("3_l1jd4")]

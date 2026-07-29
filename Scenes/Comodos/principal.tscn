@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://duojluq1q5jyy"]
+
+[ext_resource type="PackedScene" uid="uid://bigk53s6fjj48" path="res://Scenes/Player/player.tscn" id="1_iatcf"]
+[ext_resource type="PackedScene" uid="uid://bt470dbuer5pv" path="res://Scenes/NPC/NPC.tscn" id="4_jw55l"]
+[ext_resource type="PackedScene" uid="uid://d4l5hi2t6b7qx" path="res://Scenes/UI/hud.tscn" id="5_nixk0"]
+[ext_resource type="PackedScene" uid="uid://gg1utuju0w3v" path="res://Scenes/Comodos/cama.tscn" id="6_sijmr"]
+[ext_resource type="PackedScene" uid="uid://dhlkw35gidffa" path="res://Scenes/Comodos/portal_teste.tscn" id="7_tpsyn"]
+
+[node name="principal" type="Node2D" unique_id=885252157]
+scale = Vector2(0.992, 1.301)
+
+[node name="Player" parent="." unique_id=890080282 groups=["player"] instance=ExtResource("1_iatcf")]
+z_index = 1
+position = Vector2(645.28906, 276.8312)
+
+[node name="CharacterBody2D" parent="." unique_id=930602612 instance=ExtResource("4_jw55l")]
+position = Vector2(279.28738, 151.78285)
+scale = Vector2(2.396437, 1.8279061)
+
+[node name="Cama" parent="." unique_id=593541009 instance=ExtResource("6_sijmr")]
+position = Vector2(434.47583, 307.4558)
+
+[node name="PortalTeste" parent="." unique_id=2141324737 instance=ExtResource("7_tpsyn")]
+position = Vector2(651.2098, 396.618)
+
+[node name="HUD" parent="." unique_id=1312395184 instance=ExtResource("5_nixk0")]

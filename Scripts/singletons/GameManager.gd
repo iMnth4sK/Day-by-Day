@@ -24,7 +24,7 @@ func _ready():
 	
 func setup_autosave_timer():
 	autosave_timer = Timer.new()
-	autosave_timer.wait_time = 300.0
+	autosave_timer.wait_time = 300
 	autosave_timer.one_shot = false
 	autosave_timer.autostart = false
 	autosave_timer.connect("timeout", _on_autosave_timeout)
@@ -33,6 +33,15 @@ func setup_autosave_timer():
 func _on_autosave_timeout():
 	if not game_ready or not auto_save_enabled: 
 		return
+	
+	# --- NOVA TRAVA: Evita salvar em telas indesejadas ---
+	var cena_atual = get_tree().current_scene
+	if cena_atual != null:
+		var telas_proibidas = ["MainMenu", "TelaResumo"]
+		if cena_atual.name in telas_proibidas:
+			print("Auto-save pulado: Jogador está na tela ", cena_atual.name)
+			return
+	# -----------------------------------------------------
 	
 	# Autosave com ícone sincronizado
 	Interface.play_autosave()

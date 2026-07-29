@@ -1,7 +1,7 @@
 extends Area2D
 
 # Carrega o arquivo da cena da interface na memória
-const INTERFACE_CAMA_SCENE = preload("res://Scenes/Jogo principal/interface_cama.tscn") # Ajuste o caminho do seu arquivo!
+const INTERFACE_CAMA_SCENE = preload("res://Scenes/UI/interface_cama.tscn") # Ajuste o caminho do seu arquivo!
 
 var interface_instanciada: CanvasLayer = null
 var janela_dormir: Panel = null
@@ -49,19 +49,25 @@ func fechar_e_destruir_interface():
 func _on_botao_sim_pressed():
 	print("Indo para a tela de resumo... ZzzZz")
 	
-	# 1. Salva a posição do Player
-	var player = get_tree().get_first_node_in_group("player")
-	if player:
-		GameManager.database["posicao_player"] = player.global_position
+	# Procura o Marker2D chamado "PontoDeitar" dentro da cama
+	var marker = get_node_or_null("PontoDeitar") as Marker2D
+	
+	if marker:
+		# Salva a posição exata do Marker2D!
+		GameManager.database["posicao_player"] = marker.global_position
+		print("Salvo no Marker2D:", marker.global_position)
 	else:
-		GameManager.database["posicao_player"] = global_position
+		# Se você ainda não criou o Marker2D, salva onde o Player está
+		var player = get_tree().get_first_node_in_group("Player")
+		if player:
+			GameManager.database["posicao_player"] = player.global_position
 		
 	# 2. NOVIDADE: Salva o caminho do mapa onde essa cama está!
 	GameManager.database["cena_atual"] = get_tree().current_scene.scene_file_path
 	
 	# 3. Fecha a interface e vai para o resumo
 	fechar_e_destruir_interface()
-	get_tree().change_scene_to_file("res://Scenes/Jogo principal/tela_resumo.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/tela_resumo.tscn")
 
 func _on_botao_nao_pressed():
 	fechar_e_destruir_interface()

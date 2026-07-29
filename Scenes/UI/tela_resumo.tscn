@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://0lis3h7v54vp"]
 
-[ext_resource type="Script" uid="uid://5wnehpxl5g0w" path="res://Scripts/UI/tela_resumo.gd" id="1_e1v4y"]
+[ext_resource type="Script" uid="uid://5wnehpxl5g0w" path="res://Scripts/Principal/tela_resumo.gd" id="1_e1v4y"]
 [ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="2_41058"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4usd"]

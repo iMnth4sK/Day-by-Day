@@ -1,9 +1,9 @@
-extends CanvasLayer
+extends Control
 
-@onready var main_menu = $PauseMenu/CenterContainer/MainMenu
-@onready var confirm_save_menu = $PauseMenu/CenterContainer/ConfirmSaveMenu
+@onready var main_menu = $CenterContainer/MainMenu
+@onready var confirm_save_menu = $CenterContainer/ConfirmSaveMenu
 # @onready var transition = $Transition
-@onready var menu_opcoes = $PauseMenu/CenterContainer/Opções
+@onready var menu_opcoes = $"CenterContainer/Opções"
 var destino_saida = "" 
 var busy := false
 

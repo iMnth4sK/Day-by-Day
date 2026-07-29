@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qclyn8ge7ok2"]
 
-[ext_resource type="Script" uid="uid://b533npwjv7upj" path="res://Scripts/Main Menu/Loading/loading.gd" id="1_sid5e"]
+[ext_resource type="Script" uid="uid://b533npwjv7upj" path="res://Scripts/Main Menu/loading.gd" id="1_sid5e"]
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="2_ssj2e"]
 
 [node name="Loading" type="Node2D" unique_id=1202426266]
 script = ExtResource("1_sid5e")
@@ -20,6 +21,7 @@ offset_left = 882.0
 offset_top = 595.0
 offset_right = 1081.0
 offset_bottom = 704.0
+theme_override_fonts/font = ExtResource("2_ssj2e")
 theme_override_font_sizes/font_size = 40
 text = "Loading..."
 horizontal_alignment = 2
@@ -30,3 +32,4 @@ offset_left = 1098.0
 offset_top = 642.0
 offset_right = 1250.0
 offset_bottom = 700.0
+theme_override_fonts/font = ExtResource("2_ssj2e")

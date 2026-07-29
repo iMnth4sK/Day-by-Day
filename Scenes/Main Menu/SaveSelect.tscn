@@ -1,6 +1,55 @@
 [gd_scene format=3 uid="uid://duys3qqg8gs8i"]
 
-[ext_resource type="Script" uid="uid://boq6whqxw1aai" path="res://Scripts/UI/SaveSelect.gd" id="1_ke4f6"]
+[ext_resource type="Script" uid="uid://boq6whqxw1aai" path="res://Scripts/Principal/SaveSelect.gd" id="1_ke4f6"]
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="2_ke4f6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0nrr"]
+bg_color = Color(0.13684635, 0.14283687, 0.16679895, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x4lm"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycpyp"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysygf"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j02si"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_right = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb4bg"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv6vl"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2okh3"]
+bg_color = Color(0.07058824, 0.07450981, 0.09019608, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="Control" type="Control" unique_id=1576203268]
 layout_mode = 3
@@ -11,6 +60,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ke4f6")
 
+[node name="Panel" type="Panel" parent="." unique_id=1001300352]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f0nrr")
+
 [node name="BackButton" type="Button" parent="." unique_id=1800370601]
 layout_mode = 0
 offset_left = 949.0
@@ -19,7 +77,9 @@ offset_right = 1262.0
 offset_bottom = 702.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
-theme_override_font_sizes/font_size = 41
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_5x4lm")
 text = "Voltar"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1540785755]
@@ -41,12 +101,16 @@ custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycpyp")
 
 [node name="DelSlot1" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1433979406]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ysygf")
 action_mode = 0
 text = "Apagar save 1"
 
@@ -58,12 +122,16 @@ custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j02si")
 
 [node name="DelSlot2" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1854195707]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vb4bg")
 action_mode = 0
 text = "Apagar save 2"
 
@@ -75,12 +143,16 @@ custom_minimum_size = Vector2(500, 200)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wv6vl")
 
 [node name="DelSlot3" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=498007222]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_ke4f6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2okh3")
 action_mode = 0
 text = "Apagar save 3"
 

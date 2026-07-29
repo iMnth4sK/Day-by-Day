@@ -1,25 +1,234 @@
-[gd_scene format=3 uid="uid://d0n3uusp55hcd"]
+[gd_scene format=3 uid="uid://d4l5hi2t6b7qx"]
 
-[ext_resource type="Script" uid="uid://cadq4xc56uqpn" path="res://Scripts/UI/hud.gd" id="1_e0onf"]
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="1_8glcj"]
+[ext_resource type="Script" uid="uid://bxb5oq05yxm7v" path="res://Scripts/UI/labelDias.gd" id="2_vsu76"]
+[ext_resource type="Script" uid="uid://c21r2av87n08u" path="res://Scripts/UI/PauseUI.gd" id="3_ux5h0"]
+[ext_resource type="PackedScene" uid="uid://byn2ufe3qasek" path="res://Scenes/UI/Opções.tscn" id="4_mqf2c"]
+[ext_resource type="PackedScene" uid="uid://ba4uqjys3mepr" path="res://Scenes/UI/calendario.tscn" id="5_vsu76"]
+[ext_resource type="Script" uid="uid://coi2x8c4jd6ba" path="res://Scripts/UI/RelogioLabel.gd" id="6_ux5h0"]
 
-[node name="HUD" type="CanvasLayer" unique_id=1317494800]
-script = ExtResource("1_e0onf")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mqf2c"]
+bg_color = Color(0.06666667, 0.07450981, 0.08627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 
-[node name="Control" type="Control" parent="." unique_id=233961262]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2182o"]
+bg_color = Color(0.050980393, 0.05490196, 0.06666667, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.16078432, 0.15294118, 0.14117648, 1)
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsnyh"]
+bg_color = Color(0.050980393, 0.05490196, 0.06666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.16078432, 0.15294118, 0.14117648, 1)
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 30.0
+
+[node name="HUD" type="CanvasLayer" unique_id=1312395184]
+
+[node name="Calendario" parent="." unique_id=1894460671 instance=ExtResource("5_vsu76")]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1726176761]
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 169.0
+offset_bottom = 77.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mqf2c")
+
+[node name="RelogioLabel" type="Label" parent="PanelContainer" unique_id=568244882]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_ux5h0")
+
+[node name="DayCounter" type="Control" parent="." unique_id=628974754]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 421.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1274993518]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="LabelDias" type="Label" parent="DayCounter" unique_id=1317340690]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 28
+text = "dsda"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_vsu76")
 
-[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=1435738314]
+[node name="PauseCanvas" type="Control" parent="." unique_id=358884602]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ux5h0")
+
+[node name="ColorRect" type="ColorRect" parent="PauseCanvas" unique_id=657431821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseCanvas" unique_id=934974113]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -152.0
+offset_right = 128.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="PanelContainer" parent="PauseCanvas/CenterContainer" unique_id=1765697068]
+custom_minimum_size = Vector2(0, -50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2182o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseCanvas/CenterContainer/MainMenu" unique_id=1120938944]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=216145203]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 36
+text = "MENU DE PAUSA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=1557145187]
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=1861193482]
+[node name="Continuar" type="Button" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=2125141643]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "CONTINUAR"
+icon_alignment = 1
+
+[node name="SalvarJogo" type="Button" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=1206513989]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "SALVAR JOGO"
+icon_alignment = 1
+
+[node name="Opções" type="Button" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=395072683]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "OPÇÕES"
+icon_alignment = 1
+
+[node name="MenuPrincipal" type="Button" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=1083829826]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "MENU PRINCIPAL"
+icon_alignment = 1
+
+[node name="Sair" type="Button" parent="PauseCanvas/CenterContainer/MainMenu/VBoxContainer" unique_id=1703803303]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "SAIR DO JOGO"
+icon_alignment = 1
+
+[node name="ConfirmSaveMenu" type="PanelContainer" parent="PauseCanvas/CenterContainer" unique_id=1636317250]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gsnyh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseCanvas/CenterContainer/ConfirmSaveMenu" unique_id=612504605]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer" unique_id=805590258]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 36
+text = "DESEJA SALVAR 
+ANTES DE SAIR?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer" unique_id=1494131707]
+custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
 
-[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="SalvarESair" type="Button" parent="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer" unique_id=462584411]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "SALVAR E SAIR"
+icon_alignment = 1
+
+[node name="SairSemSalvar" type="Button" parent="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer" unique_id=1954666925]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "SAIR SEM SALVAR"
+icon_alignment = 1
+
+[node name="Cancelar" type="Button" parent="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer" unique_id=1964060630]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_8glcj")
+theme_override_font_sizes/font_size = 25
+text = "CANCELAR"
+icon_alignment = 1
+
+[node name="Opções" parent="PauseCanvas/CenterContainer" unique_id=364505951 instance=ExtResource("4_mqf2c")]
+visible = false
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+
+[connection signal="pressed" from="PauseCanvas/CenterContainer/MainMenu/VBoxContainer/Continuar" to="PauseCanvas" method="_on_continuar_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/MainMenu/VBoxContainer/SalvarJogo" to="PauseCanvas" method="_on_salvar_jogo_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/MainMenu/VBoxContainer/Opções" to="PauseCanvas" method="_on_opções_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/MainMenu/VBoxContainer/MenuPrincipal" to="PauseCanvas" method="_on_menu_principal_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/MainMenu/VBoxContainer/Sair" to="PauseCanvas" method="_on_sair_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer/SalvarESair" to="PauseCanvas" method="_on_salvar_e_sair_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer/SairSemSalvar" to="PauseCanvas" method="_on_sair_sem_salvar_pressed"]
+[connection signal="pressed" from="PauseCanvas/CenterContainer/ConfirmSaveMenu/VBoxContainer/Cancelar" to="PauseCanvas" method="_on_cancelar_pressed"]

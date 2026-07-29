@@ -1,6 +1,6 @@
 extends Node
 
-var path = "res://Scenes/Jogo principal/principal.tscn"
+var path = "res://Scenes/Comodos/Quarto.tscn"
 var loaded = false
 
 @onready var bar = $CanvasLayer/ProgressBar

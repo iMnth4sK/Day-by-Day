@@ -2,6 +2,24 @@
 
 [ext_resource type="Script" uid="uid://5xgum8vpe0i4" path="res://Scripts/Player/NomePlayer.gd" id="1_3vd8u"]
 [ext_resource type="PackedScene" uid="uid://c7culx0jdpgcd" path="res://Scenes/FadeInOut/transition.tscn" id="2_0bysg"]
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="3_0bysg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_448wv"]
+bg_color = Color(0.0078141345, 0.015561087, 0.028172363, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xd6e2"]
+bg_color = Color(0.06666667, 0.07450981, 0.08627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mac40"]
+bg_color = Color(0.06666667, 0.07450981, 0.08627451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="Control" type="Control" unique_id=752147250]
 layout_mode = 3
@@ -21,13 +39,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_448wv")
 
 [node name="Label" type="Label" parent="." unique_id=534999214]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 17.0
-offset_right = 535.0
-offset_bottom = 89.0
+offset_left = 397.0
+offset_top = 141.0
+offset_right = 888.0
+offset_bottom = 213.0
+theme_override_fonts/font = ExtResource("3_0bysg")
 theme_override_font_sizes/font_size = 52
 text = "Qual é o seu nome?"
 
@@ -43,23 +63,42 @@ theme_override_font_sizes/font_size = 34
 text = "Digite um nome!"
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=201292026]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 495.0
-offset_right = 641.0
-offset_bottom = 687.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -311.5
+offset_top = -320.0
+offset_right = 311.5
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_0bysg")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_xd6e2")
 placeholder_text = "Digite seu nome..."
+alignment = 1
 deselect_on_focus_loss_enabled = false
 caret_blink = true
 
 [node name="Button" type="Button" parent="." unique_id=1954561891]
-layout_mode = 0
-offset_left = 706.0
-offset_top = 609.0
-offset_right = 1017.0
-offset_bottom = 688.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -155.5
+offset_top = -100.0
+offset_right = 155.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_0bysg")
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mac40")
 text = "Continuar"
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

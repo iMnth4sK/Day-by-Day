@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cc4r2kdd6ut4r" path="res://Scripts/Debug/DebugManager.gd" id="1_y8lpi"]
 
 [node name="DebugMenu" type="CanvasLayer" unique_id=715355040]
+layer = 500
 script = ExtResource("1_y8lpi")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1218261012]
@@ -17,19 +18,53 @@ layout_mode = 2
 text = "Debug Menu"
 horizontal_alignment = 1
 
-[node name="BtnNextDay" type="Button" parent="PanelContainer/VBoxContainer" unique_id=108609066]
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=1014184024]
 layout_mode = 2
-text = "+1 dia"
-
-[node name="BtnAddYear" type="Button" parent="PanelContainer/VBoxContainer" unique_id=717307794]
-layout_mode = 2
-text = "+1 ano
-"
 
 [node name="ToggleAutoSave" type="CheckButton" parent="PanelContainer/VBoxContainer" unique_id=896832217]
 layout_mode = 2
 text = "AutoSave: ON"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/BtnNextDay" to="." method="_on_btn_next_day_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/BtnAddYear" to="." method="_on_btn_add_year_pressed"]
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=737942645]
+layout_mode = 2
+
+[node name="BtnNextDay" type="Button" parent="PanelContainer/VBoxContainer" unique_id=108609066]
+layout_mode = 2
+text = "+1 dia"
+
+[node name="BtnNextMonth" type="Button" parent="PanelContainer/VBoxContainer" unique_id=468757982]
+layout_mode = 2
+text = "+1 Mês"
+
+[node name="BtnNextYear" type="Button" parent="PanelContainer/VBoxContainer" unique_id=717307794]
+layout_mode = 2
+text = "+1 ano
+"
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/VBoxContainer" unique_id=968094118]
+layout_mode = 2
+
+[node name="HBoxContainer_Hora" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1749047584]
+layout_mode = 2
+
+[node name="InputHora" type="LineEdit" parent="PanelContainer/VBoxContainer/HBoxContainer_Hora" unique_id=1144192698]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+placeholder_text = "Hora"
+
+[node name="LabelDoisPontos" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer_Hora" unique_id=1129082262]
+layout_mode = 2
+text = ":"
+
+[node name="InputMinuto" type="LineEdit" parent="PanelContainer/VBoxContainer/HBoxContainer_Hora" unique_id=1688646032]
+layout_mode = 2
+placeholder_text = "Minuto"
+
+[node name="BtnSetTime" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer_Hora" unique_id=565623468]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Setar Hora"
+
 [connection signal="toggled" from="PanelContainer/VBoxContainer/ToggleAutoSave" to="." method="_on_toggle_auto_save_toggled"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/BtnNextYear" to="." method="_on_btn_add_year_pressed"]

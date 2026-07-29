@@ -1,0 +1,560 @@
+[gd_scene format=3 uid="uid://ba4uqjys3mepr"]
+
+[ext_resource type="FontFile" uid="uid://cng5xowqciwti" path="res://Assets/PixelifySans-VariableFont_wght.ttf" id="1_lvhxo"]
+[ext_resource type="Script" uid="uid://c42a0k8g71kio" path="res://Scripts/UI/calendario.gd" id="1_xc2wb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc2wb"]
+bg_color = Color(0.06666667, 0.07450981, 0.08627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is8lh"]
+bg_color = Color(0.06666667, 0.07450981, 0.08627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="Calendario" type="Control" unique_id=1894460671]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xc2wb")
+
+[node name="Fundo" type="Panel" parent="." unique_id=326358877]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -222.5
+offset_right = 386.0
+offset_bottom = 222.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xc2wb")
+
+[node name="TituloMes" type="Label" parent="Fundo" unique_id=1484212418]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -387.0
+offset_right = 387.0
+offset_bottom = 86.5
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 42
+text = "(Month)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridDias" type="GridContainer" parent="Fundo" unique_id=1733539060]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -350.0
+offset_top = -365.0
+offset_right = 350.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 7
+
+[node name="Semana" type="Panel" parent="Fundo/GridDias" unique_id=1220215836]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana" unique_id=1725491955]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "Su"
+horizontal_alignment = 1
+
+[node name="Semana2" type="Panel" parent="Fundo/GridDias" unique_id=339920843]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana2" unique_id=329019178]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "M"
+horizontal_alignment = 1
+
+[node name="Semana3" type="Panel" parent="Fundo/GridDias" unique_id=1524663222]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana3" unique_id=1168300898]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "T"
+horizontal_alignment = 1
+
+[node name="Semana4" type="Panel" parent="Fundo/GridDias" unique_id=1108569381]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana4" unique_id=567612349]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "W"
+horizontal_alignment = 1
+
+[node name="Semana5" type="Panel" parent="Fundo/GridDias" unique_id=1464624955]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana5" unique_id=714336854]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "Th"
+horizontal_alignment = 1
+
+[node name="Semana6" type="Panel" parent="Fundo/GridDias" unique_id=785892299]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana6" unique_id=1554076868]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "F"
+horizontal_alignment = 1
+
+[node name="Semana7" type="Panel" parent="Fundo/GridDias" unique_id=1380886830]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Semana7" unique_id=168106026]
+layout_mode = 0
+offset_left = 2.75
+offset_top = 3.0
+offset_right = 97.75
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "Sa"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Fundo/GridDias" unique_id=2116565650]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel" unique_id=323601346]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="Panel2" type="Panel" parent="Fundo/GridDias" unique_id=2049439348]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel2" unique_id=927021842]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "2
+"
+
+[node name="Panel3" type="Panel" parent="Fundo/GridDias" unique_id=940906613]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel3" unique_id=200689468]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "3
+"
+
+[node name="Panel4" type="Panel" parent="Fundo/GridDias" unique_id=771665074]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel4" unique_id=1836112844]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "4"
+
+[node name="Panel5" type="Panel" parent="Fundo/GridDias" unique_id=723406798]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel5" unique_id=1888736265]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "5"
+
+[node name="Panel6" type="Panel" parent="Fundo/GridDias" unique_id=230411705]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel6" unique_id=614998728]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "6"
+
+[node name="Panel7" type="Panel" parent="Fundo/GridDias" unique_id=1502772017]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel7" unique_id=80233684]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "7"
+
+[node name="Panel8" type="Panel" parent="Fundo/GridDias" unique_id=239066208]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel8" unique_id=1380372135]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "8"
+
+[node name="Panel9" type="Panel" parent="Fundo/GridDias" unique_id=1748882102]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel9" unique_id=1918244373]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "9"
+
+[node name="Panel10" type="Panel" parent="Fundo/GridDias" unique_id=2006047418]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel10" unique_id=721025154]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "10"
+
+[node name="Panel11" type="Panel" parent="Fundo/GridDias" unique_id=1825782964]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel11" unique_id=1670609805]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "11"
+
+[node name="Panel12" type="Panel" parent="Fundo/GridDias" unique_id=501360047]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel12" unique_id=370935594]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "12"
+
+[node name="Panel13" type="Panel" parent="Fundo/GridDias" unique_id=552978311]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel13" unique_id=2066575506]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "13"
+
+[node name="Panel14" type="Panel" parent="Fundo/GridDias" unique_id=816538411]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel14" unique_id=1269915507]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "14"
+
+[node name="Panel15" type="Panel" parent="Fundo/GridDias" unique_id=1100781067]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel15" unique_id=1894810989]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "15"
+
+[node name="Panel16" type="Panel" parent="Fundo/GridDias" unique_id=1362045549]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel16" unique_id=82816811]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "16"
+
+[node name="Panel17" type="Panel" parent="Fundo/GridDias" unique_id=176589201]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel17" unique_id=861438742]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "17"
+
+[node name="Panel18" type="Panel" parent="Fundo/GridDias" unique_id=204178782]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel18" unique_id=147019222]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "18"
+
+[node name="Panel19" type="Panel" parent="Fundo/GridDias" unique_id=155583584]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel19" unique_id=1989646065]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "19"
+
+[node name="Panel20" type="Panel" parent="Fundo/GridDias" unique_id=1498470492]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel20" unique_id=1348570039]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "20"
+
+[node name="Panel21" type="Panel" parent="Fundo/GridDias" unique_id=2050820708]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_is8lh")
+
+[node name="Label" type="Label" parent="Fundo/GridDias/Panel21" unique_id=1569830988]
+layout_mode = 0
+offset_left = 5.5
+offset_top = 3.0
+offset_right = 45.5
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_lvhxo")
+theme_override_font_sizes/font_size = 32
+text = "21"
